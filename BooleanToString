@@ -1,0 +1,5 @@
+package solution
+
+fun convert(b: Boolean): String {
+    return "$b"
+}
