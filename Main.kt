@@ -1,34 +1,25 @@
-fun main(args: Array<String>) {
-    var c= advancecal()
-    println(c.sum())
+fun main() {
+    var a= advancecal();
 }
-open class Calculator(var a:Int=3 , var b:Int){
-    var values:Int=a
-    set(value){
-        if(value%2==0){
-            field=value
-        }else{
-            print("It's not an even number\n");
-        }
+open class cal(var a:Int, var b:Int){
+    init {
+        println("This is the base class")
     }
-    get(){
-        return field*10
-    }
-    init{
-        print("The object is created\n")
-    }
-    constructor(aValue:Int, bValue:Int , cValue:Int)
-            :this(aValue,bValue){
-        values= aValue
-    }
-    fun present():Int{
-        return values
-    }
-}
-
-class advancecal():Calculator(2,3){
-    var newval=a
     fun sum():Int{
-        return a
+        return a+b;
+    }
+    fun sub():Int{
+        return a-b;
+    }
+}
+class advancecal():cal(2,5){
+    init{
+        print("This is the child class")
+    }
+    fun mul():Int{
+        return a*b;
+    }
+    fun div():Int{
+        return a/b;
     }
 }
